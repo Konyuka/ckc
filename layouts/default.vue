@@ -1,14 +1,13 @@
 <script setup>
 // import Navigation from "@/Components/Client/Navigation.vue";
 // import Footer from "@/Components/Client/Footer.vue";
-import { onMounted, ref, watch, computed } from 'vue';
 // import WOW from 'wow.js';
 // import { usePage } from "@inertiajs/vue3";
 
 
-const page = usePage();
+// const page = usePage();
 const message = computed(() => {
-    return page.props.message;
+    // return page.props.message;
 })
 
 const launchToaster = ref(false)
@@ -20,22 +19,22 @@ watch(message, (newX) => {
     }
 })
 
-window.onscroll = function () {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollTopButton.value = true;
-    } else {
-        scrollTopButton.value = false;
-    }
-}
+// window.onscroll = function () {
+//     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+//         scrollTopButton.value = true;
+//     } else {
+//         scrollTopButton.value = false;
+//     }
+// }
 
-const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+// const scrollToTop = () => {
+//     window.scrollTo({ top: 0, behavior: 'smooth' });
+// }
 
 
 
 onMounted(() => {
-    new WOW().init();
+    // new WOW().init();
 });
 </script>
 

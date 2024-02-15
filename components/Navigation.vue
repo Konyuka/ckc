@@ -2,15 +2,17 @@
 // import { Link, usePage } from '@inertiajs/vue3';
 import { computed, ref } from 'vue'
 
-const page = usePage();
+// const page = usePage();
 
 const currentRoute = computed(() => {
+    return
     const pathName = window.location.pathname;
     return pathName;
 })
 
 const hasAuth = computed(() => {
-    return page.props.auth.user ? true : false
+    return false
+    // return page.props.auth.user ? true : false
 });
 
 const openMobileMenu = ref(false);
@@ -29,10 +31,10 @@ const routeBlog = computed(()=>{
 
             <div class="flex gap-2">
 
-                <Link :href="route('admin.dashboard')" v-if="hasAuth" type="button" data-wow-duration="3s"
+                <button v-if="hasAuth" type="button" data-wow-duration="3s"
                     class="wow animate__zoomInDown border-2 border-primary hover:bg-primary hover:text-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                     Dashboard
-                </Link>
+                </button>
                 <!-- <button type="button"
                         data-wow-duration="3s"
                         class="wow animate__zoomInDown border-2 border-primary hover:bg-primary hover:text-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
@@ -65,10 +67,10 @@ const routeBlog = computed(()=>{
         <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4">
 
             <div class="flex justify-between h-full">
-                <Link :href="route('landing')" class="flex items-center mr-6 mt-2">
+                <button class="flex items-center mr-6 mt-2">
                 <img src="/img/logo.jpg" class="h-20 mr-3 wow animate__lightSpeedInLeft fadein mb-2" data-wow-duration="1s"
                     data-wow-delay="2s" alt="Flowbite Logo" />
-                </Link>
+                </button>
 
                 <!-- mobile button -->
                 <button @click="openMobileMenu = !openMobileMenu" data-collapse-toggle="navbar-default" type="button"

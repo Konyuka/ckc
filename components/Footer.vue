@@ -9,19 +9,19 @@ const currentYear = computed(() => {
 })
 
 
-const form = useForm({
+const form = {
     email: null
-});
+}
 
 const saveSubscriber = () => {
-    form.post(route('save-subscriber'), {
-        preserveState: true,
-        preserveScroll: true,
-        onSuccess: (response) => {
-            console.log(response)
-            form.reset();
-        },
-    })
+    // form.post(route('save-subscriber'), {
+    //     preserveState: true,
+    //     preserveScroll: true,
+    //     onSuccess: (response) => {
+    //         console.log(response)
+    //         form.reset();
+    //     },
+    // })
 }
 
 
@@ -51,9 +51,9 @@ const saveSubscriber = () => {
                             </div>
                         </div>
                         <div>
-                            <p v-if="form.errors.email" class="text-white mt-5 text-xs"><i
+                            <!-- <p v-if="form.errors.email" class="text-white mt-5 text-xs"><i
                                     class="fa-regular fa-circle-exclamation fa-xl mr-2 text-primary font-semibold"></i>
-                                {{ form.errors.email }}</p>
+                                {{ form.errors.email }}</p> -->
                         </div>
                     </div>
                     <div class="mt-16 grid sm:grid-cols-2 grid-cols-1 gap-8 xl:col-span-2 xl:mt-0">
@@ -65,19 +65,19 @@ const saveSubscriber = () => {
                                 <h3 class="text-sm font-semibold leading-6 text-primary">Quick Links</h3>
                                 <ul role="list" class="mt-6 space-y-4">
                                     <li>
-                                        <Link :href="route('services')"
+                                        <button 
                                             class="text-sm leading-6 text-white hover:text-primary"><i
-                                            class="mr-2 fas fa-caret-right"></i> Services</Link>
+                                            class="mr-2 fas fa-caret-right"></i> Services</button>
                                     </li>
                                     <li>
-                                        <Link :href="route('contacts')"
+                                        <button
                                             class="text-sm leading-6 text-white hover:text-primary"><i
-                                            class="mr-2 fas fa-caret-right"></i> Contact Us</Link>
+                                            class="mr-2 fas fa-caret-right"></i> Contact Us</button>
                                     </li>
                                     <li>
-                                        <Link :href="route('about')"
+                                        <button
                                             class="text-sm leading-6 text-white hover:text-primary"><i
-                                            class="mr-2 fas fa-caret-right"></i> About Us</Link>
+                                            class="mr-2 fas fa-caret-right"></i> About Us</button>
                                     </li>
                                 </ul>
                             </div>
@@ -85,14 +85,14 @@ const saveSubscriber = () => {
                                 <h3 class="text-sm font-semibold leading-6 text-primary">Helper Links</h3>
                                 <ul role="list" class="mt-6 space-y-4">
                                     <li>
-                                        <Link :href="route('media')"
+                                        <button
                                             class="text-sm leading-6 text-white hover:text-primary"><i
-                                            class="mr-2 fas fa-caret-right"></i> Blogs</Link>
+                                            class="mr-2 fas fa-caret-right"></i> Blogs</button>
                                     </li>
                                     <li>
-                                        <Link :href="route('media')"
+                                        <button
                                             class="text-sm leading-6 text-white hover:text-primary"><i
-                                            class="mr-2 fas fa-caret-right"></i> Gallery</Link>
+                                            class="mr-2 fas fa-caret-right"></i> Gallery</button>
                                     </li>
                                     <li>
                                         <button @click="careerModal = true"
